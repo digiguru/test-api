@@ -39,10 +39,10 @@ export default function Home() {
             </p>
           </div>
 
-          <Link href="/api/a" className={styles.card}>
-            <h2>Example API endpoint</h2>
+          <div  className={styles.card}>
+            <h2><Link href="/api/a">Example API endpoint</Link></h2>
             <p>See some data being returned by the endpoint.</p>
-          </Link>
+          </div>
         </div>
       </main>
 
