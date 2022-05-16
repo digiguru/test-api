@@ -66,11 +66,10 @@
 }
 
 .grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 5% 5%; 
 }
 
 .card {
@@ -85,9 +84,14 @@
   max-width: 300px;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
+a.card {
+  color: #1000f3;
+  border-color: #1000f3;
+}
+
+a.card:hover,
+a.card:focus,
+a.card:active {
   color: #0070f3;
   border-color: #0070f3;
 }

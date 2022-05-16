@@ -13,41 +13,34 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to the AND Digital Coding Test v0.1
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+         
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <div className={styles.card}>
+            <h2>Rules</h2>
+            <p>This is a coding test for AND Digital. You may play with this site before the test begins.</p>
+          </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          <div className={styles.card}>
+            <h2>Guidence</h2>
+            <p>You will be asked to pull data from the site's API during the test using any coding environment / language you desire</p>
+          </div>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
+          <div  className={styles.card}>
+            <h2>Pre-work</h2>
             <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
+              You can come to the test with a fully working application, but will be expected to make changes in it under test conditions
             </p>
+          </div>
+
+          <a href="/api/a" className={styles.card}>
+            <h2>Example API endpoint</h2>
+            <p>See some data being returned by the endpoint.</p>
           </a>
         </div>
       </main>
