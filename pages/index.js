@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -28,7 +29,7 @@ export default function Home() {
 
           <div className={styles.card}>
             <h2>Guidence</h2>
-            <p>You will be asked to pull data from the site's API during the test using any coding environment / language you desire</p>
+            <p>You will be asked to pull data from the site&apos;s API during the test using any coding environment / language you desire</p>
           </div>
 
           <div  className={styles.card}>
@@ -38,10 +39,10 @@ export default function Home() {
             </p>
           </div>
 
-          <a href="/api/a" className={styles.card}>
+          <Link href="/api/a" className={styles.card}>
             <h2>Example API endpoint</h2>
             <p>See some data being returned by the endpoint.</p>
-          </a>
+          </Link>
         </div>
       </main>
 
