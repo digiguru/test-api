@@ -5,7 +5,15 @@ const lookup = {
     "d": [[2,4],[2,3],[2,2],[3,1],[4,1],[5,2],[5,3],[5,4],[3,5],[4,5],[5,5]],
     "n": [[1,4],[1,3],[1,2],[2,1],[3,1],[4,2],[4,3],[4,4],[2,5],[3,5],[4,5],[2,6],[3,6],[4,6]]
 }
-
+/**
+ * @swagger
+ * /api/a:
+ *   get:
+ *     description: Returns the data in a stream
+ *     responses:
+ *       200:
+ *         description: [[1,1],[1,2], ... ,[n,n]]
+ */
 export default function handler(req, res) {
     const { id } = req.query
     if (id.length === 1) {
