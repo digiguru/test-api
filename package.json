@@ -13,7 +13,7 @@
     "next-swagger-doc": "^0.3.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "swagger-ui-react": "^4.15.2"
+    "swagger-ui-react": "^5.31.0"
   },
   "devDependencies": {
     "eslint": "8.15.0",
