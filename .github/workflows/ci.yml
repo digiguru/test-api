@@ -7,6 +7,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -18,6 +19,7 @@ concurrency:
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Check out repository
@@ -43,3 +45,18 @@ jobs:
 
       - name: Build application
         run: npm run build
+
+      - name: Smoke test production build
+        run: |
+          npm start -- -p 3000 > /tmp/test-api.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true; cat /tmp/test-api.log' EXIT
+
+          curl --fail --silent --show-error \
+            --retry 20 \
+            --retry-all-errors \
+            --retry-delay 1 \
+            http://127.0.0.1:3000/ >/dev/null
+
+          curl --fail --silent --show-error \
+            http://127.0.0.1:3000/api >/dev/null
