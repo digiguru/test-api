@@ -19,7 +19,7 @@
     "swagger-ui-react": "^5.32.13"
   },
   "devDependencies": {
-    "eslint": "8.15.0",
+    "eslint": "10.8.1",
     "eslint-config-next": "12.1.6"
   },
   "overrides": {
