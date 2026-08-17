@@ -77,3 +77,5 @@ jobs:
           git add -u .eslintrc.json
           git commit -m "fix: migrate to ESLint 10 flat config"
           git push
+
+# Trigger after workflow registration.
