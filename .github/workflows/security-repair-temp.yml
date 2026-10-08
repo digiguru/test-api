@@ -1,0 +1,32 @@
+name: Repair October production security audit
+on:
+  push:
+    branches: [fix/oct-2026-production-audit]
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Update vulnerable dependencies
+        run: npm audit fix || true
+      - name: Security gate
+        run: npm audit --omit=dev --audit-level=high
+      - name: Application checks
+        run: npm run lint && npm run build
+      - name: Save lockfile
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json package.json
+          if ! git diff --cached --quiet; then
+            git commit -m "fix(deps): clear October production audit blockers"
+            git push
+          fi
